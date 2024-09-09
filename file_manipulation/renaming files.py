@@ -17,3 +17,4 @@ INPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'rename_fil
 PREFIX_1 = "shot"
 PREFIX_2 = "img"
 batch_rename_files(INPUT_DIR, PREFIX_1, PREFIX_2)
+   
