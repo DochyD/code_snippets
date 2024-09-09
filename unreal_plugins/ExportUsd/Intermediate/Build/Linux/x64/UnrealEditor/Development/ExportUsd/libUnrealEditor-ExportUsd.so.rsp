@@ -1,0 +1,6 @@
+"/home/ddoc/dev/unreal_projects/UnrealUsd/Plugins/ExportUsd/Intermediate/Build/Linux/x64/UnrealEditor/Development/ExportUsd/Module.ExportUsd.cpp.o"
+ -soname="libUnrealEditor-ExportUsd.so"
+ -rpath-link="/home/ddoc/dev/unreal_projects/UnrealUsd/Plugins/ExportUsd/Binaries/Linux"
+ -L"/home/ddoc/dccs/ue5/Engine/Binaries/Linux"
+ --start-group
+ --end-group
