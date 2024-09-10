@@ -32,7 +32,7 @@ def construct_movie_from_frames_opencv(frame_pattern, output_video, total_frames
     print(f"Video created: {output_video}")
 
 # Usage
-BASE_DIR = os.path.join(path_utils.get_project_dir(),'movie_and_frames', 'frames_to_movie')
+BASE_DIR = path_utils.get_project_dir()
 FRAMES_FOLDER = os.path.join(BASE_DIR, 'input_data', 'ffmpeg')
 FRAMES_PATERN = os.path.join(BASE_DIR, 'input_data', 'ffmpeg', 'frame_%04d.png')
 OUTPUT_PATH = os.path.join(BASE_DIR, 'output_data', 'output_mov_opencv.mp4')

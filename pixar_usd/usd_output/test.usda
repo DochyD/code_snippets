@@ -1,0 +1,15 @@
+#usda 1.0
+
+def Xform "Xform"
+{
+    double3 xformOp:translate = (5, 0, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate"]
+
+    def Cube "Cube"
+    {
+        double size = 5
+        double3 xformOp:translate = (5, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+}
+

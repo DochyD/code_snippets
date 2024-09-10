@@ -19,7 +19,7 @@ def construct_movie_from_frames_ffmpeg(input_pattern, output_video, fps=24):
         print(f"An error occurred: {e.stderr}")
 
 # Usage
-BASE_DIR = os.path.join(path_utils.get_project_dir(),'movie_and_frames', 'frames_to_movie')
+BASE_DIR = path_utils.get_project_dir()
 INPUT_PATERN = os.path.join(BASE_DIR, 'input_data', 'ffmpeg', 'frame_%04d.png')  # Specify the path to your video file
 OUTPUT_PATH = os.path.join(BASE_DIR, 'output_data', 'output_mov_ffmpeg.mp4')   # Specify the output folder for saving frames
 

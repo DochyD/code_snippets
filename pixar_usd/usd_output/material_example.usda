@@ -1,0 +1,19 @@
+#usda 1.0
+
+def Xform "Root"
+{
+    def Cube "Cube"
+    {
+        rel material:binding = </Root/Material>
+    }
+
+    def Material "Material"
+    {
+        def Shader "Shader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (1, 0, 0)
+        }
+    }
+}
+

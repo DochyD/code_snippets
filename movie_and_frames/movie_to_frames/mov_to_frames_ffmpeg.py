@@ -25,7 +25,7 @@ def extract_frames_ffmpeg(video_path, output_folder):
     print(f"Frames extracted to {output_folder}")
 
 # Usage
-BASE_DIR = os.path.join(path_utils.get_project_dir(),'movie_and_frames', 'movie_to_frames')
+BASE_DIR = path_utils.get_project_dir()
 VIDEO_PATH = os.path.join(BASE_DIR, 'input_data', 'input_video.mp4')  # Specify the path to your video file
 OUTPUT_FOLDER = os.path.join(BASE_DIR, 'output_data', 'ffmpeg')   # Specify the output folder for saving frames
 

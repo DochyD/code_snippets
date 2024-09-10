@@ -3,4 +3,4 @@ import os
 
 def get_project_dir():
     """Get project directory."""
-    return os.path.abspath(os.curdir)
+    return os.path.dirname(os.path.abspath(__file__))
