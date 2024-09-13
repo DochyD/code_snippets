@@ -2,13 +2,10 @@
 
 def Xform "Xform"
 {
-    double3 xformOp:translate = (5, 0, 0)
-    uniform token[] xformOpOrder = ["xformOp:translate"]
-
     def Cube "Cube"
     {
-        double size = 5
-        double3 xformOp:translate = (5, 0, 0)
+        double size = 2
+        double3 xformOp:translate = (3, 3, 3)
         uniform token[] xformOpOrder = ["xformOp:translate"]
     }
 }
