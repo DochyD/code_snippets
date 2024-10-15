@@ -1,10 +1,11 @@
-from pxr import Usd, UsdGeom, UsdShade, Sdf
+"""Testing materials in USD."""
 import os
+from pxr import Usd, UsdGeom, UsdShade, Sdf
 
-dir = os.path.dirname(os.path.abspath(__file__))
-file_path = dir + '/usd_output/material_example.usda'
+DIRECTORY = os.path.dirname(os.path.abspath(__file__))
+FILE_PATH = DIRECTORY + '/usd_output/material_example.usda'
 
-stage = Usd.Stage.CreateNew(file_path)
+stage = Usd.Stage.CreateNew(FILE_PATH)
 
 # Define a root Xform and a Cube
 xform = UsdGeom.Xform.Define(stage, '/Root')

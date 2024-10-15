@@ -1,8 +1,9 @@
-from pxr import Usd, UsdGeom
+"""Modify an usd stage."""
 import os
+from pxr import Usd, UsdGeom
 
-dir = os.path.dirname(os.path.abspath(__file__))
-file_path = dir + '/usd_output/test.usda'
+DIRECTORY = os.path.dirname(os.path.abspath(__file__))
+FILE_PATH_path = DIRECTORY + '/usd_output/test.usda'
 
 # Open an existing USD file
 stage = Usd.Stage.Open(file_path)

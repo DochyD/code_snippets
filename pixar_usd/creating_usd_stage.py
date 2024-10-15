@@ -1,11 +1,12 @@
-from pxr import Usd, UsdGeom, Gf
+"""Create a simple USD stage"""
 import os
+from pxr import Usd, UsdGeom, Gf
 
-dir = os.path.dirname(os.path.abspath(__file__))
-file_path = dir + '/usd_output/test.usda'
+DIRECTORY = os.path.dirname(os.path.abspath(__file__))
+FILE_PATH = DIRECTORY + '/usd_output/test.usda'
 
 # Create a new USD stage with a root Xform
-stage = Usd.Stage.CreateNew(file_path)
+stage = Usd.Stage.CreateNew(FILE_PATH)
 
 
 # Define a basic root Xform (transformation) at the root of the stage

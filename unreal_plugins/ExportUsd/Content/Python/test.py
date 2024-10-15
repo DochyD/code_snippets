@@ -1,4 +1,4 @@
-"""Module to export sequencer data using OTIO"""
+"""Test file so I can run quick snippet inside unreal"""
 import os
 import opentimelineio as otio
 #import path_utils
@@ -23,7 +23,7 @@ def export_sequencer_data_as_otio():
 
     print(timeline)
     if os.path.exists(out_dir):
-        print("eheheh")
+        print("path exists!")
         otio.adapters.write_to_file(timeline, out_path)
     else:
         unreal.log_error("Can't write OTIO files, {} dir does not exists".format(out_dir))

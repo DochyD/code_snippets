@@ -8,3 +8,5 @@ def export_usd_data_out_of_world():
     out_folder = path_utils.get_usd_export_folder()
     if out_folder:
         pass
+
+    # TODO

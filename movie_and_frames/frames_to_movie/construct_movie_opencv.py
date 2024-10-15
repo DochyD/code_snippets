@@ -4,10 +4,18 @@ import os
 import cv2
 import path_utils
 
+BASE_DIR = path_utils.get_project_dir()
+FRAMES_FOLDER = os.path.join(BASE_DIR, 'input_data', 'ffmpeg')
+FRAMES_PATERN = os.path.join(BASE_DIR, 'input_data', 'ffmpeg', 'frame_%04d.png')
+OUTPUT_PATH = os.path.join(BASE_DIR, 'output_data', 'output_mov_opencv.mp4')
+_, _, files = next(os.walk(FRAMES_FOLDER))
+NUMBER_FRAMES = len(files)
+
 def construct_movie_from_frames_opencv(frame_pattern, output_video, total_frames, fps=24):
-    """Extract frames function."""
-    # Read the first frame to get its width, height (this will be used to set the video size)
-    first_frame = cv2.imread(frame_pattern % 1)  # Read frame_0001.png (start with first frame)
+    """Create mp4 from frames using ffmpeg."""
+
+    # Read the first frame to get its width, height (will be used to set the video size)
+    first_frame = cv2.imread(frame_pattern % 1)  # Read frame_0001.png
     if first_frame is None:
         print(f"Error: Could not read the first frame using the pattern {frame_pattern % 1}")
         return
@@ -15,7 +23,7 @@ def construct_movie_from_frames_opencv(frame_pattern, output_video, total_frames
     height, width, _ = first_frame.shape
 
     # Define the codec and create VideoWriter object
-    fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # Specify the codec (e.g., 'mp4v' for .mp4 files)
+    fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # Specify the codec ('mp4v' for .mp4 files)
     video_writer = cv2.VideoWriter(output_video, fourcc, fps, (width, height))
 
     # Write each frame to the video based on the pattern
@@ -31,11 +39,4 @@ def construct_movie_from_frames_opencv(frame_pattern, output_video, total_frames
     video_writer.release()
     print(f"Video created: {output_video}")
 
-# Usage
-BASE_DIR = path_utils.get_project_dir()
-FRAMES_FOLDER = os.path.join(BASE_DIR, 'input_data', 'ffmpeg')
-FRAMES_PATERN = os.path.join(BASE_DIR, 'input_data', 'ffmpeg', 'frame_%04d.png')
-OUTPUT_PATH = os.path.join(BASE_DIR, 'output_data', 'output_mov_opencv.mp4')
-_, _, files = next(os.walk(FRAMES_FOLDER))
-NUMBER_FRAMES = len(files)
 construct_movie_from_frames_opencv(FRAMES_PATERN, OUTPUT_PATH, NUMBER_FRAMES)

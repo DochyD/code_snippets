@@ -28,12 +28,11 @@ def export_sequencer_data_as_otio():
         os.makedirs(out_dir)
 
     # Find shot track
-    master_shot_track = master_sequencer.find_tracks_by_exact_type(unreal.MovieSceneCinematicShotTrack)[0]
+    master_shot_track = master_sequencer.find_tracks_by_exact_type(
+        unreal.MovieSceneCinematicShotTrack
+    )[0]
 
     if out_dir and master_sequencer:
-        unreal.log("yay")
-        unreal.log(out_dir)
-        unreal.log(master_sequencer)
         # Creat OTIO timeline
         timeline = otio.schema.Timeline(name="MyTimeline")
         track = otio.schema.Track()
@@ -53,21 +52,13 @@ def export_sequencer_data_as_otio():
                 duration=otio.opentime.RationalTime(duration, 24)
             )
             track.append(clip)
-        
-        # out_path = out_dir + "my_timeline.otio"
 
-        unreal.log("yay")
-        unreal.log(out_dir)
+        out_path = out_dir + "my_timeline.otio"
 
-        # print(timeline)
         if os.path.exists(out_dir):
-            print("eheheh")
-            #otio.adapters.write_to_file(timeline, out_path)
+            otio.adapters.write_to_file(timeline, out_path)
         else:
             unreal.log_error("Can't write OTIO files, {} dir does not exists".format(out_dir))
 
     else:
         unreal.log_error("Interrupting sequencer data export.")
-
-
-# export_sequencer_data_as_otio()

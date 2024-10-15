@@ -1,4 +1,4 @@
-"""Test file so I can run quick snippet inside unreal"""
+"""Test file so I can run quick code snippet inside unreal"""
 import os
 import path_utils
 import unreal
