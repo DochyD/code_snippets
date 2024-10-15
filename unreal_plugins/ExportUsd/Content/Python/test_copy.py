@@ -1,4 +1,6 @@
-"""Test file so I can run quick code snippet inside unreal"""
+"""Test file so I can run quick code snippet inside unreal
+> Use py /path/to/file in the cmd inside unreal.
+"""
 import os
 import path_utils
 import unreal
